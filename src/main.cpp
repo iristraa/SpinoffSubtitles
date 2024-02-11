@@ -26,6 +26,8 @@ class $modify(MenuLayer) {
 			// liteSprite->setPosition({100, 100});
 			liteSprite->setPositionX(titlePos.x + 150.5);
 			liteSprite->setPositionY(titlePos.y - 30);
+			liteSprite->setScale(0.8);
+			liteSprite->setZOrder(10);
 			this->addChild(liteSprite);
 			liteSprite->setID("lite-title");
 		}
@@ -34,6 +36,7 @@ class $modify(MenuLayer) {
 			/// meltdownSprite->setPosition({ 100, 100 });
 			meltdownSprite->setPositionX(titlePos.x + 140);
 			meltdownSprite->setPositionY(titlePos.y - 44);
+			meltdownSprite->setZOrder(10);
 			this->addChild(meltdownSprite);
 			meltdownSprite->setID("meltdown-title");
 		}
@@ -42,6 +45,7 @@ class $modify(MenuLayer) {
 			// worldSprite->setPosition({ 100, 100 });
 			worldSprite->setPositionX(titlePos.x + 120);
 			worldSprite->setPositionY(titlePos.y - 44);
+			worldSprite->setZOrder(10);
 			this->addChild(worldSprite);
 			worldSprite->setID("world-title");
 		}
@@ -50,6 +54,7 @@ class $modify(MenuLayer) {
 			// subzeroSprite->setPosition({ 100, 100 });
 			subzeroSprite->setPositionX(titlePos.x + 120);
 			subzeroSprite->setPositionY(titlePos.y - 44);
+			subzeroSprite->setZOrder(10);
 			this->addChild(subzeroSprite);
 			subzeroSprite->setID("subzero-title");
 		}
@@ -58,6 +63,7 @@ class $modify(MenuLayer) {
 			// twopointtwoSprite->setPosition({ 100, 100 });
 			twopointtwoSprite->setPositionX(titlePos.x + 120);
 			twopointtwoSprite->setPositionY(titlePos.y - 44);
+			twopointtwoSprite->setZOrder(10);
 			this->addChild(twopointtwoSprite);
 			twopointtwoSprite->setID("twopointtwo-title");
 		}
