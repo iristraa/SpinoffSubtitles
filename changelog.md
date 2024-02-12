@@ -1,3 +1,7 @@
+# v1.0.2
+
+ * Added dependency for Node IDs
+
 # v1.0.1
 
  * Fixed Z-Ordering
