@@ -8,4 +8,5 @@ TODO:
 - settings menu improvements
 - texture change for editor button and more games button in MenuLayer
 - better 2.2 subtext
+- android support
 - meow
