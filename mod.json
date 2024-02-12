@@ -1,11 +1,18 @@
 {
 	"geode": "2.0.0-beta.15",
 	"gd": "2.204",
-	"version": "v1.0.1",
+	"version": "v1.0.2",
 	"id": "iristraa.spinoffsubtitles",
 	"name": "SpinoffSubtitles",
 	"developer": "iristraa",
 	"description": "Adds spinoff subtexts to the main menu.",
+	"dependencies": [
+		{
+			"id": "geode.node-ids",
+			"version": ">=v1.3.0",
+			"importance": "required"
+		}
+	],
 	"resources": {
 		"sprites": [
 			"resources/gj_2point2Logo_001.png"
