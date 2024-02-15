@@ -4,6 +4,14 @@
 
 using namespace geode::prelude;
 
+// Random Code from stack overflow cause why not: https://stackoverflow.com/a/2125908
+template < typename Type > std::string tostr (const Type & t)
+{
+  std::ostringstream os;
+  os << t;
+  return os.str ();
+}
+
 class $modify(MenuLayer) {
 	bool init() {
 		if (!MenuLayer::init()) return false;
@@ -84,7 +92,7 @@ class $modify(MenuLayer) {
 			//twopointtwoSprite->setID("twopointtwo-title");
 		}
 
-		log::info(theChosenList);
+		log::info(tostr(theChosenList));
 
 		// todo: have a random thingy selected choose one and make id efewhaufioea->setID("spinoff-title");
 
