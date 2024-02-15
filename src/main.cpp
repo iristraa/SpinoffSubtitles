@@ -24,13 +24,7 @@ class $modify(MenuLayer) {
 		auto mgMenu = this->getChildByID("more-games-menu");
 		auto rightSideMenu = this->getChildByID("right-side-menu");
 
-		switch (Mod::get()->getSettingValue<int64_t>("subtext-type"))
-		{
-		case 0:
-			// none
-			break;
-		case 1:
-			// lite
+		if (Mod::get()->getSettingValue<bool>("subtext-lite")) {
 			// liteSprite->setPosition({100, 100});
 			liteSprite->setPositionX(titlePos.x + 150.5);
 			liteSprite->setPositionY(titlePos.y - 30);
@@ -38,43 +32,42 @@ class $modify(MenuLayer) {
 			liteSprite->setZOrder(10);
 			this->addChild(liteSprite);
 			liteSprite->setID("lite-title");
-			break;
-		case 2:
-			// meltdown
-			// meltdownSprite->setPosition({ 100, 100 });
+		}
+
+		if (Mod::get()->getSettingValue<bool>("subtext-meltdown")) {
+			/// meltdownSprite->setPosition({ 100, 100 });
 			meltdownSprite->setPositionX(titlePos.x + 140);
 			meltdownSprite->setPositionY(titlePos.y - 44);
 			meltdownSprite->setZOrder(10);
 			this->addChild(meltdownSprite);
 			meltdownSprite->setID("meltdown-title");
-			break;
-		case 3:
-			// world
+		}
+
+		if (Mod::get()->getSettingValue<bool>("subtext-world")) {
 			// worldSprite->setPosition({ 100, 100 });
 			worldSprite->setPositionX(titlePos.x + 120);
 			worldSprite->setPositionY(titlePos.y - 44);
 			worldSprite->setZOrder(10);
 			this->addChild(worldSprite);
 			worldSprite->setID("world-title");
-			break;
-		case 4:
-			// subzero
+		}
+
+		if (Mod::get()->getSettingValue<bool>("subtext-subzero")) {
 			// subzeroSprite->setPosition({ 100, 100 });
 			subzeroSprite->setPositionX(titlePos.x + 120);
 			subzeroSprite->setPositionY(titlePos.y - 44);
 			subzeroSprite->setZOrder(10);
 			this->addChild(subzeroSprite);
 			subzeroSprite->setID("subzero-title");
-			break;
-		case 5:
-			// 2.2
+		}
+
+		if (Mod::get()->getSettingValue<bool>("subtext-2point2")) {
 			// twopointtwoSprite->setPosition({ 100, 100 });
 			twopointtwoSprite->setPositionX(titlePos.x + 120);
 			twopointtwoSprite->setPositionY(titlePos.y - 44);
 			twopointtwoSprite->setZOrder(10);
 			this->addChild(twopointtwoSprite);
 			twopointtwoSprite->setID("twopointtwo-title");
-			break;
 		}
 
 		if (Mod::get()->getSettingValue<bool>("full-ver-btn")) {
