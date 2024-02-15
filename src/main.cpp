@@ -11,6 +11,7 @@ template < typename Type > std::string tostr (const Type & t)
   os << t;
   return os.str ();
 }
+// hello
 
 class $modify(MenuLayer) {
 	bool init() {
