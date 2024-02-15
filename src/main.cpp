@@ -16,13 +16,21 @@ class $modify(MenuLayer) {
 		auto title = this->getChildByID("main-title");
 		auto titlePos = title->getPosition();
 
-		// auto freeLevels = CCSpriteFrame::createWithTexture("GJ_freeLevelsBtn_001.png");
-		// auto fullVersion = CCSpriteFrame::createWithTexture("GJ_fullBtn_001.png");
+		auto freeLevels = CCSprite::createWithSpriteFrameName("GJ_freeLevelsBtn_001.png");
+		auto fullVersion = CCSprite::createWithSpriteFrameName("GJ_fullBtn_001.png");
+		auto freeChest = CCSprite::createWithSpriteFrameName("GJ_freeChestBtn_001.png");
 
 		auto mainMenu = this->getChildByID("main-menu");
 		auto mgMenu = this->getChildByID("more-games-menu");
+		auto rightSideMenu = this->getChildByID("right-side-menu");
 
-		if (Mod::get()->getSettingValue<bool>("subtext-lite")) {
+		switch (Mod::get()->getSettingValue<int64_t>("subtext-type"))
+		{
+		case 0:
+			// none
+			break;
+		case 1:
+			// lite
 			// liteSprite->setPosition({100, 100});
 			liteSprite->setPositionX(titlePos.x + 150.5);
 			liteSprite->setPositionY(titlePos.y - 30);
@@ -30,52 +38,59 @@ class $modify(MenuLayer) {
 			liteSprite->setZOrder(10);
 			this->addChild(liteSprite);
 			liteSprite->setID("lite-title");
-		}
-
-		if (Mod::get()->getSettingValue<bool>("subtext-meltdown")) {
-			/// meltdownSprite->setPosition({ 100, 100 });
+			break;
+		case 2:
+			// meltdown
+			// meltdownSprite->setPosition({ 100, 100 });
 			meltdownSprite->setPositionX(titlePos.x + 140);
 			meltdownSprite->setPositionY(titlePos.y - 44);
 			meltdownSprite->setZOrder(10);
 			this->addChild(meltdownSprite);
 			meltdownSprite->setID("meltdown-title");
-		}
-
-		if (Mod::get()->getSettingValue<bool>("subtext-world")) {
+			break;
+		case 3:
+			// world
 			// worldSprite->setPosition({ 100, 100 });
 			worldSprite->setPositionX(titlePos.x + 120);
 			worldSprite->setPositionY(titlePos.y - 44);
 			worldSprite->setZOrder(10);
 			this->addChild(worldSprite);
 			worldSprite->setID("world-title");
-		}
-
-		if (Mod::get()->getSettingValue<bool>("subtext-subzero")) {
+			break;
+		case 4:
+			// subzero
 			// subzeroSprite->setPosition({ 100, 100 });
 			subzeroSprite->setPositionX(titlePos.x + 120);
 			subzeroSprite->setPositionY(titlePos.y - 44);
 			subzeroSprite->setZOrder(10);
 			this->addChild(subzeroSprite);
 			subzeroSprite->setID("subzero-title");
-		}
-
-		if (Mod::get()->getSettingValue<bool>("subtext-2point2")) {
+			break;
+		case 5:
+			// 2.2
 			// twopointtwoSprite->setPosition({ 100, 100 });
 			twopointtwoSprite->setPositionX(titlePos.x + 120);
 			twopointtwoSprite->setPositionY(titlePos.y - 44);
 			twopointtwoSprite->setZOrder(10);
 			this->addChild(twopointtwoSprite);
 			twopointtwoSprite->setID("twopointtwo-title");
+			break;
 		}
 
-		// this for another day, i'm tired
+		if (Mod::get()->getSettingValue<bool>("full-ver-btn")) {
+			CCMenuItemSpriteExtra* editBtn = dynamic_cast<CCMenuItemSpriteExtra*>(mainMenu->getChildByID("editor-button"));
+			editBtn->setNormalImage(fullVersion);
+		}
 
-		//if (Mod::get()->getSettingValue<bool>("full-version")) {
-		//	auto editorBtn = mainMenu->getChildByID("editor-button");
-		//	// wake me up when there's another way to access this ccsprite inside of this ccmenuitemspriteextra
-		//	auto editorBtnSprite = editorBtn->getChildren()->objectAtIndex(0);
-		//	editorBtnSprite->setDisplayFrame(fullVersion);
-		//}
+		if (Mod::get()->getSettingValue<bool>("free-chest-btn")) {
+			CCMenuItemSpriteExtra* chestBtn = dynamic_cast<CCMenuItemSpriteExtra*>(rightSideMenu->getChildByID("daily-chest-button"));
+			chestBtn->setNormalImage(freeChest);
+		}
+
+		if (Mod::get()->getSettingValue<bool>("free-lvls-btn")) {
+			CCMenuItemSpriteExtra* mgBtn = dynamic_cast<CCMenuItemSpriteExtra*>(mgMenu->getChildByID("more-games-button"));
+			mgBtn->setNormalImage(freeLevels);
+		}
 
 		return true;
 	}
