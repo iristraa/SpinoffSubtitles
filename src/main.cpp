@@ -9,7 +9,7 @@ class $modify(MenuLayer) {
 		if (!MenuLayer::init()) return false;
 
 		std::list<CCSprite*> theChosenList {};
-		auto boxesSelected = 0
+		auto boxesSelected = 0;
 
 		auto liteSprite = CCSprite::createWithSpriteFrameName("GJ_lite_001.png");
 		auto meltdownSprite = CCSprite::createWithSpriteFrameName("GJ_md_001.png");
@@ -35,8 +35,8 @@ class $modify(MenuLayer) {
 			liteSprite->setScale(0.8);
 			liteSprite->setZOrder(10);
 			liteSprite->setID("lite-title");
-			theChosenList.emplace_back(liteSprite)
-			boxesSelected = boxesSelected + 1
+			theChosenList.emplace_back(liteSprite);
+			boxesSelected = boxesSelected + 1;
 			//liteSprite->setID("lite-title");
 		}
 
@@ -45,7 +45,7 @@ class $modify(MenuLayer) {
 			meltdownSprite->setPositionX(titlePos.x + 140);
 			meltdownSprite->setPositionY(titlePos.y - 44);
 			meltdownSprite->setZOrder(10);
-			boxesSelected = boxesSelected + 1
+			boxesSelected = boxesSelected + 1;
 			meltdownSprite->setID("meltdown-title");
 		}
 
@@ -54,7 +54,7 @@ class $modify(MenuLayer) {
 			worldSprite->setPositionX(titlePos.x + 120);
 			worldSprite->setPositionY(titlePos.y - 44);
 			worldSprite->setZOrder(10);
-			boxesSelected = boxesSelected + 1
+			boxesSelected = boxesSelected + 1;
 			worldSprite->setID("world-title");
 		}
 
@@ -63,7 +63,7 @@ class $modify(MenuLayer) {
 			subzeroSprite->setPositionX(titlePos.x + 120);
 			subzeroSprite->setPositionY(titlePos.y - 44);
 			subzeroSprite->setZOrder(10);
-			boxesSelected = boxesSelected + 1
+			boxesSelected = boxesSelected + 1;
 			subzeroSprite->setID("subzero-title");
 		}
 
@@ -72,7 +72,7 @@ class $modify(MenuLayer) {
 			twopointtwoSprite->setPositionX(titlePos.x + 120);
 			twopointtwoSprite->setPositionY(titlePos.y - 44);
 			twopointtwoSprite->setZOrder(10);
-			boxesSelected = boxesSelected + 1
+			boxesSelected = boxesSelected + 1;
 			twopointtwoSprite->setID("twopointtwo-title");
 		}
 
