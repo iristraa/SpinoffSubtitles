@@ -1,11 +1,15 @@
 #include <Geode/Geode.hpp>
 #include <Geode/modify/MenuLayer.hpp>
+#include <matjson.hpp>
 
 using namespace geode::prelude;
 
 class $modify(MenuLayer) {
 	bool init() {
 		if (!MenuLayer::init()) return false;
+
+		std::list<CCSprite*> theChosenList {};
+		auto boxesSelected = 0
 
 		auto liteSprite = CCSprite::createWithSpriteFrameName("GJ_lite_001.png");
 		auto meltdownSprite = CCSprite::createWithSpriteFrameName("GJ_md_001.png");
@@ -30,8 +34,10 @@ class $modify(MenuLayer) {
 			liteSprite->setPositionY(titlePos.y - 30);
 			liteSprite->setScale(0.8);
 			liteSprite->setZOrder(10);
-			this->addChild(liteSprite);
 			liteSprite->setID("lite-title");
+			theChosenList.emplace_back(liteSprite)
+			boxesSelected = boxesSelected + 1
+			//liteSprite->setID("lite-title");
 		}
 
 		if (Mod::get()->getSettingValue<bool>("subtext-meltdown")) {
@@ -39,7 +45,7 @@ class $modify(MenuLayer) {
 			meltdownSprite->setPositionX(titlePos.x + 140);
 			meltdownSprite->setPositionY(titlePos.y - 44);
 			meltdownSprite->setZOrder(10);
-			this->addChild(meltdownSprite);
+			boxesSelected = boxesSelected + 1
 			meltdownSprite->setID("meltdown-title");
 		}
 
@@ -48,7 +54,7 @@ class $modify(MenuLayer) {
 			worldSprite->setPositionX(titlePos.x + 120);
 			worldSprite->setPositionY(titlePos.y - 44);
 			worldSprite->setZOrder(10);
-			this->addChild(worldSprite);
+			boxesSelected = boxesSelected + 1
 			worldSprite->setID("world-title");
 		}
 
@@ -57,7 +63,7 @@ class $modify(MenuLayer) {
 			subzeroSprite->setPositionX(titlePos.x + 120);
 			subzeroSprite->setPositionY(titlePos.y - 44);
 			subzeroSprite->setZOrder(10);
-			this->addChild(subzeroSprite);
+			boxesSelected = boxesSelected + 1
 			subzeroSprite->setID("subzero-title");
 		}
 
@@ -66,10 +72,13 @@ class $modify(MenuLayer) {
 			twopointtwoSprite->setPositionX(titlePos.x + 120);
 			twopointtwoSprite->setPositionY(titlePos.y - 44);
 			twopointtwoSprite->setZOrder(10);
-			this->addChild(twopointtwoSprite);
+			boxesSelected = boxesSelected + 1
 			twopointtwoSprite->setID("twopointtwo-title");
 		}
 
+		// todo: have a random thingy selected choose one and make id efewhaufioea->setID("spinoff-title");
+
+		
 		if (Mod::get()->getSettingValue<bool>("full-ver-btn")) {
 			CCMenuItemSpriteExtra* editBtn = dynamic_cast<CCMenuItemSpriteExtra*>(mainMenu->getChildByID("editor-button"));
 			editBtn->setNormalImage(fullVersion);
