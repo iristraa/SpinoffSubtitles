@@ -1,6 +1,9 @@
 #include <Geode/Geode.hpp>
 #include <Geode/modify/MenuLayer.hpp>
 #include <matjson.hpp>
+#include <iostream>
+#include <sstream>
+#include <string>
 
 using namespace geode::prelude;
 
