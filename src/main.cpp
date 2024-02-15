@@ -45,8 +45,10 @@ class $modify(MenuLayer) {
 			meltdownSprite->setPositionX(titlePos.x + 140);
 			meltdownSprite->setPositionY(titlePos.y - 44);
 			meltdownSprite->setZOrder(10);
-			boxesSelected = boxesSelected + 1;
 			meltdownSprite->setID("meltdown-title");
+			theChosenList.emplace_back(meltdownSprite);
+			boxesSelected = boxesSelected + 1;
+			//meltdownSprite->setID("meltdown-title");
 		}
 
 		if (Mod::get()->getSettingValue<bool>("subtext-world")) {
@@ -54,8 +56,10 @@ class $modify(MenuLayer) {
 			worldSprite->setPositionX(titlePos.x + 120);
 			worldSprite->setPositionY(titlePos.y - 44);
 			worldSprite->setZOrder(10);
-			boxesSelected = boxesSelected + 1;
 			worldSprite->setID("world-title");
+			theChosenList.emplace_back(worldSprite);
+			boxesSelected = boxesSelected + 1;
+			//worldSprite->setID("world-title");
 		}
 
 		if (Mod::get()->getSettingValue<bool>("subtext-subzero")) {
@@ -63,8 +67,10 @@ class $modify(MenuLayer) {
 			subzeroSprite->setPositionX(titlePos.x + 120);
 			subzeroSprite->setPositionY(titlePos.y - 44);
 			subzeroSprite->setZOrder(10);
-			boxesSelected = boxesSelected + 1;
 			subzeroSprite->setID("subzero-title");
+			theChosenList.emplace_back(subzeroSprite);
+			boxesSelected = boxesSelected + 1;
+			//subzeroSprite->setID("subzero-title");
 		}
 
 		if (Mod::get()->getSettingValue<bool>("subtext-2point2")) {
@@ -72,9 +78,13 @@ class $modify(MenuLayer) {
 			twopointtwoSprite->setPositionX(titlePos.x + 120);
 			twopointtwoSprite->setPositionY(titlePos.y - 44);
 			twopointtwoSprite->setZOrder(10);
-			boxesSelected = boxesSelected + 1;
 			twopointtwoSprite->setID("twopointtwo-title");
+			theChosenList.emplace_back(twopointtwoSprite);
+			boxesSelected = boxesSelected + 1;
+			//twopointtwoSprite->setID("twopointtwo-title");
 		}
+
+		log::info(theChosenList);
 
 		// todo: have a random thingy selected choose one and make id efewhaufioea->setID("spinoff-title");
 
