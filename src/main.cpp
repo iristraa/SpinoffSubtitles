@@ -92,8 +92,8 @@ class $modify(MenuLayer) {
 			boxesSelected = boxesSelected + 1;
 			//twopointtwoSprite->setID("twopointtwo-title");
 		}
-
-		log::info(tostr(theChosenList));
+		const eee = tostr(theChosenList)
+		log::info(eee);
 
 		// todo: have a random thingy selected choose one and make id efewhaufioea->setID("spinoff-title");
 
