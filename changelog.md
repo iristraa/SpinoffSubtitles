@@ -1,4 +1,4 @@
-# v1.0.0
+# v1.1.0
 
  * Added options to change the textures of:
 	* the Editor button (into the Full Version button)
