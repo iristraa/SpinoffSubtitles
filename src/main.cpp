@@ -90,7 +90,7 @@ class $modify(MenuLayer) {
     		for (const auto& element : theChosenList) {
         		result += element->getID() + " ";
     		}
-		log::info(result);
+		log::info("result: {}",result);
 
 		// todo: have a random thingy selected choose one and make id efewhaufioea->setID("spinoff-title");
 
