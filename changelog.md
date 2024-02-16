@@ -1,3 +1,7 @@
+# v1.2.0
+
+ * Added **Randomization Mode**
+
 # v1.1.0
 
  * Added options to change the textures of:
