@@ -12,7 +12,6 @@ class $modify(MenuLayer) {
 		if (!MenuLayer::init()) return false;
 
 		std::list<CCSprite*> theChosenList {};
-		auto boxesSelected = 0;
 
 		auto liteSprite = CCSprite::createWithSpriteFrameName("GJ_lite_001.png");
 		auto meltdownSprite = CCSprite::createWithSpriteFrameName("GJ_md_001.png");
@@ -39,7 +38,6 @@ class $modify(MenuLayer) {
 			liteSprite->setZOrder(10);
 			liteSprite->setID("lite-title");
 			theChosenList.emplace_back(liteSprite);
-			boxesSelected = boxesSelected + 1;
 			//liteSprite->setID("lite-title");
 		}
 
@@ -50,7 +48,6 @@ class $modify(MenuLayer) {
 			meltdownSprite->setZOrder(10);
 			meltdownSprite->setID("meltdown-title");
 			theChosenList.emplace_back(meltdownSprite);
-			boxesSelected = boxesSelected + 1;
 			//meltdownSprite->setID("meltdown-title");
 		}
 
@@ -61,7 +58,6 @@ class $modify(MenuLayer) {
 			worldSprite->setZOrder(10);
 			worldSprite->setID("world-title");
 			theChosenList.emplace_back(worldSprite);
-			boxesSelected = boxesSelected + 1;
 			//worldSprite->setID("world-title");
 		}
 
@@ -72,7 +68,6 @@ class $modify(MenuLayer) {
 			subzeroSprite->setZOrder(10);
 			subzeroSprite->setID("subzero-title");
 			theChosenList.emplace_back(subzeroSprite);
-			boxesSelected = boxesSelected + 1;
 			//subzeroSprite->setID("subzero-title");
 		}
 
@@ -83,17 +78,18 @@ class $modify(MenuLayer) {
 			twopointtwoSprite->setZOrder(10);
 			twopointtwoSprite->setID("twopointtwo-title");
 			theChosenList.emplace_back(twopointtwoSprite);
-			boxesSelected = boxesSelected + 1;
 			//twopointtwoSprite->setID("twopointtwo-title");
 		}
 		std::string result;
+		auto theCount = 0
     		for (const auto& element : theChosenList) {
+			theCount = theCount + 1
         		result += element->getID() + " ";
     		}
-		log::info("result: {}",result);
+		log::info("The selected texts: {}",result);
 
 		// todo: have a random thingy selected choose one and make id efewhaufioea->setID("spinoff-title");
-
+		switch(rand() % theCount) {} // todo: finish lol
 		
 		if (Mod::get()->getSettingValue<bool>("full-ver-btn")) {
 			CCMenuItemSpriteExtra* editBtn = dynamic_cast<CCMenuItemSpriteExtra*>(mainMenu->getChildByID("editor-button"));
