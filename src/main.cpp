@@ -2,19 +2,11 @@
 #include <Geode/modify/MenuLayer.hpp>
 #include <matjson.hpp>
 #include <iostream>
-#include <sstream>
+#include <list>
 #include <string>
 
 using namespace geode::prelude;
 
-// Random Code from stack overflow cause why not: https://stackoverflow.com/a/2125908
-template < typename Type > std::string tostr (const Type & t)
-{
-  std::ostringstream os;
-  os << t;
-  return os.str ();
-}
-// hello
 
 class $modify(MenuLayer) {
 	bool init() {
@@ -95,7 +87,11 @@ class $modify(MenuLayer) {
 			boxesSelected = boxesSelected + 1;
 			//twopointtwoSprite->setID("twopointtwo-title");
 		}
-		log::info(tostr(theChosenList));
+		std::string result;
+    		for (const auto& element : myList) {
+        		result += element + " ";
+    		}
+		log::info(result);
 
 		// todo: have a random thingy selected choose one and make id efewhaufioea->setID("spinoff-title");
 
