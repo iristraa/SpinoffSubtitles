@@ -135,10 +135,10 @@ class $modify(MenuLayer) {
 			std::string result;
 			auto theCount = 0;
 	    		for (const auto& element : theChosenList) {
-				theCount = theCount + 1;
-				if (theCount == 1 || theCount == 0) result += element->getID() + " "; else result += element->getID() + ", ";
+				theCount += 1;
+				if (theCount == 1 || theCount == 0) result += " " + element->getID(); else result += ", " + element->getID();
 	    		}
-			log::info("The selected texts: {}",result);
+			log::info("The selected texts:{}",result);
 	
 			// todo: have a random thingy selected choose one and make id efewhaufioea->setID("spinoff-title");
 			if (theCount == 0) break;
