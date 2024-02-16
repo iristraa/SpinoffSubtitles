@@ -81,15 +81,15 @@ class $modify(MenuLayer) {
 			//twopointtwoSprite->setID("twopointtwo-title");
 		}
 		std::string result;
-		auto theCount = 0
+		auto theCount = 0;
     		for (const auto& element : theChosenList) {
-			theCount = theCount + 1
+			theCount = theCount + 1;
         		result += element->getID() + " ";
     		}
 		log::info("The selected texts: {}",result);
 
 		// todo: have a random thingy selected choose one and make id efewhaufioea->setID("spinoff-title");
-		switch(rand() % theCount) {} // todo: finish lol
+		switch(rand() % theCount) {}; // todo: finish lol
 		
 		if (Mod::get()->getSettingValue<bool>("full-ver-btn")) {
 			CCMenuItemSpriteExtra* editBtn = dynamic_cast<CCMenuItemSpriteExtra*>(mainMenu->getChildByID("editor-button"));
