@@ -88,7 +88,7 @@ class $modify(MenuLayer) {
 			//twopointtwoSprite->setID("twopointtwo-title");
 		}
 		std::string result;
-    		for (const auto& element : myList) {
+    		for (const auto& element : theChosenList) {
         		result += element + " ";
     		}
 		log::info(result);
