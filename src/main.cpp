@@ -1,6 +1,5 @@
 #include <Geode/Geode.hpp>
 #include <Geode/modify/MenuLayer.hpp>
-#include <matjson.hpp>
 #include <iostream>
 #include <list>
 #include <string>
@@ -89,7 +88,7 @@ class $modify(MenuLayer) {
 		}
 		std::string result;
     		for (const auto& element : theChosenList) {
-        		result += element + " ";
+        		result += element->getID() + " ";
     		}
 		log::info(result);
 
