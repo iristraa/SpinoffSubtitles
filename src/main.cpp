@@ -143,7 +143,7 @@ class $modify(MenuLayer) {
 			// todo: have a random thingy selected choose one and make id efewhaufioea->setID("spinoff-title");
 			if (theCount == 0) break;
 			// if (theCount == 1) break;
-			this->addChild(theChosenList[rand() % theCount])
+			this->addChild(theChosenList[rand() % theCount]);
 			break;
 		}
 		
