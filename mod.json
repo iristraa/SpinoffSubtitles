@@ -25,7 +25,7 @@
 	"settings": {
 		"subtext-type": {
 			"name": "Set Subtext",
-			"description": "Sets the game's subtext.\n\n0: None\n1: Lite\n2: Meltdown\n3: World\n4: SubZero\n5: 2.2\n<b>-1: Random</b>",
+			"description": "Sets the game's subtext.\n\n0: None\n1: Lite\n2: Meltdown\n3: World\n4: SubZero\n5: 2.2\n-1: Random",
 			"type": "int",
 			"default": 0,
 			"min": -1,
@@ -60,7 +60,7 @@
 			"default": false
 		},
 		"subtext-2point2": {
-			"name": "2.2 Subtext",
+			"name": "2.2 Subtext (Random)",
 			"description": "Enables the \"2.2\" subtext, as seen in the GD 2.2 trailer. Look at the \"Set Subtext\" setting description to learn how to enable randomization.",
 			"type": "bool",
 			"default": false
