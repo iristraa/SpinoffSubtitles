@@ -1,7 +1,11 @@
 {
 	"geode": "2.0.0-beta.15",
-	"gd": "2.204",
-	"version": "v1.1.0",
+	"gd": {
+		"win": "2.204",
+		"android": "2.205",
+		"mac": "2.200"
+	},
+	"version": "v1.2.0",
 	"id": "iristraa.spinoffsubtitles",
 	"name": "SpinoffSubtitles",
 	"developer": "iristraa",
@@ -22,15 +26,45 @@
 	"settings": {
 		"subtext-type": {
 			"name": "Set Subtext",
-			"description": "Sets the game's subtext.\n\n0: None\n1: Lite\n2: Meltdown\n3: World\n4: SubZero\n5: 2.2",
+			"description": "Sets the game's subtext.\n\n0: None\n1: Lite\n2: Meltdown\n3: World\n4: SubZero\n5: 2.2\n-1: Random",
 			"type": "int",
 			"default": 0,
-			"min": 0,
+			"min": -1,
 			"max": 5,
 			"control": {
 				"arrows": true,
 				"slider": false
 			}
+		},
+		"subtext-lite": {
+			"name": "Lite Subtext (Random)",
+			"description": "Enables the \"Lite\" subtext, as seen in GD Lite. Look at the \"Set Subtext\" setting description to learn how to enable randomization.",
+			"type": "bool",
+			"default": false
+		},
+		"subtext-meltdown": {
+			"name": "Meltdown Subtext (Random)",
+			"description": "Enables the \"Meltdown\" subtext, as seen in GD Meltdown. Look at the \"Set Subtext\" setting description to learn how to enable randomization.",
+			"type": "bool",
+			"default": false
+		},
+		"subtext-world": {
+			"name": "World Subtext (Random)",
+			"description": "Enables the \"World\" subtext, as seen in GD World. Look at the \"Set Subtext\" setting description to learn how to enable randomization.",
+			"type": "bool",
+			"default": false
+		},
+		"subtext-subzero": {
+			"name": "SubZero Subtext (Random)",
+			"description": "Enables the \"SubZero\" subtext, as seen in GD SubZero. Look at the \"Set Subtext\" setting description to learn how to enable randomization.",
+			"type": "bool",
+			"default": false
+		},
+		"subtext-2point2": {
+			"name": "2.2 Subtext (Random)",
+			"description": "Enables the \"2.2\" subtext, as seen in the GD 2.2 trailer. Look at the \"Set Subtext\" setting description to learn how to enable randomization.",
+			"type": "bool",
+			"default": false
 		},
 		"full-ver-btn": {
 			"name": "Full Version button",
