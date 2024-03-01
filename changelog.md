@@ -1,6 +1,9 @@
 # v1.2.0
 
- * Added **Randomization Mode**
+ * [Coop's addition] Added **Randomization Mode**
+ * [Coop's addition] Added Android & Mac OS builds
+ * Added repo link to mod.json
+ * 
 
 # v1.1.0
 

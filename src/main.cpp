@@ -1,11 +1,27 @@
 #include <Geode/Geode.hpp>
 #include <Geode/modify/MenuLayer.hpp>
+#include <Geode/modify/LoadingLayer.hpp>
 #include <iostream>
 #include <vector>
 #include <string>
 
 using namespace geode::prelude;
 
+class $modify(LoadingLayer) {
+	bool init(bool p0) {
+		if (!LoadingLayer::init(p0)) return false;
+
+		/*CCSprite* bgTexture = dynamic_cast<CCSprite*>(this->getChildByID("bg-texture"));
+		auto newBG = CCSprite::createWithSpriteFrameName("game_bg_09_001.png");
+		bgTexture->setDisplayFrame(newBG);*/
+
+		CCSprite* bgTexture = dynamic_cast<CCSprite*>(this->getChildByID("bg-texture"));
+		CCTexture2D* _tex = CCSprite::create("game_bg_09_001.png")->getTexture();
+		bgTexture->setTexture(_tex);
+
+		return true;
+	}
+};
 
 class $modify(MenuLayer) {
 	bool init() {
