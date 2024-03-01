@@ -6,6 +6,7 @@
 	"name": "SpinoffSubtitles",
 	"developer": "iristraa",
 	"description": "Adds spinoff subtexts to the main menu.",
+	"repository": "https://github.com/iristraa/SpinoffSubtitles",
 	"dependencies": [
 		{
 			"id": "geode.node-ids",
